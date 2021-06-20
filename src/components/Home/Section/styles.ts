@@ -6,7 +6,7 @@ interface Container {
 }
 
 export const Container = styled.div<Container>`
-  height: 176px;
+  margin-bottom: 32px;
 
   header {
     padding: 0 20px;
@@ -34,12 +34,35 @@ export const Container = styled.div<Container>`
     display: flex;
     padding-left: 20px;
     padding-right: ${({ paddingRight }) => (paddingRight ? '20px' : '0')};
-    width: 100%;
+    height: 100%;
+    margin-top: 8px;
   }
 
-  &:not(:first-child) {
-    margin-top: 32px;
+  &.discoverNewBook main {
+    & > div {
+      height: 128px;
+      transform: scale(0.8);
+
+      &:first-child {
+        background: ${colors.discoverNewBookFirstChild};
+        border-radius: 4px;
+        box-shadow: 2px 4px 48px rgba(154, 175, 209, 0.62134);
+        color: ${colors.discoverNewBookFirstChildText};
+        transform: scale(1);
+        min-width: 70%;
+      }
+    }
   }
+`;
+
+interface Card {
+  firstCardWidth: string;
+}
+
+export const Card = styled.div<Card>`
+  display: flex;
+  width: 100%;
+  max-width: ${({ firstCardWidth }) => firstCardWidth};
 `;
 
 export const LeftSide = styled.div`
@@ -47,4 +70,9 @@ export const LeftSide = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
 `;

@@ -13,4 +13,7 @@ export const colors = {
 
   sectionHeaderTitle: '#3F4043',
   sectionHeaderMore: '#4ABDF1',
+
+  discoverNewBookFirstChild: '#00173D',
+  discoverNewBookFirstChildText: '#FEFEFE',
 };

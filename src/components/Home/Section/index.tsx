@@ -1,12 +1,14 @@
 import React from 'react';
 
-import { Container, LeftSide } from './styles';
+import { Card, Container, LeftSide } from './styles';
 
 interface Section {
   title: string;
   moreText: string;
   data: [];
   paddingRight?: boolean;
+  firstCardWidth?: string;
+  [props: string]: any;
 }
 
 const Section: React.FC<Section> = ({
@@ -14,23 +16,38 @@ const Section: React.FC<Section> = ({
   moreText,
   title,
   paddingRight = true,
+  firstCardWidth = '100%',
+  ...props
 }: Section) => {
   return (
-    <Container paddingRight={paddingRight}>
+    <Container paddingRight={paddingRight} {...props}>
       <header>
         <span>{title}</span>
         <span>{moreText}</span>
       </header>
 
       <main>
-        <LeftSide>
-          <div>
-            <span>Title</span>
-            <span>Author</span>
-          </div>
-          <span>120+ read now</span>
-        </LeftSide>
-        <img src="" alt="" />
+        <Card firstCardWidth={firstCardWidth}>
+          <LeftSide>
+            <div>
+              <span>Title</span>
+              <span>Author</span>
+            </div>
+            <span>120+ read now</span>
+          </LeftSide>
+          <img src="" alt="" />
+        </Card>
+
+        <Card firstCardWidth={firstCardWidth}>
+          <LeftSide>
+            <div>
+              <span>Title</span>
+              <span>Author</span>
+            </div>
+            <span>120+ read now</span>
+          </LeftSide>
+          <img src="" alt="" />
+        </Card>
       </main>
     </Container>
   );

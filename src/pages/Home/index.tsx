@@ -22,9 +22,16 @@ const Home: React.FC = () => {
         moreText="More"
         data={[]}
         paddingRight={false}
+        firstCardWidth="70%"
+        className="discoverNewBook"
       />
 
-      <Section title="Currently reading" moreText="All" data={[]} />
+      <Section
+        title="Currently reading"
+        moreText="All"
+        data={[]}
+        firstCardWidth="80%"
+      />
 
       <Section title="Reviews of The Days" moreText="All Video" data={[]} />
 
